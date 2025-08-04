@@ -87,8 +87,6 @@ Automatizar e facilitar a vida do analista de suporte técnico — especialmente
 - [ ] Modo silencioso para execução via linha de comando (parâmetros CLI)
 - [ ] Validação de integridade de arquivos de log
 - [ ] Exportação em `.txt` ou `.csv` das informações do sistema
-- [ ] Integração com ferramentas de helpdesk como GLPI ou OTRS
-- [ ] Módulo de diagnóstico avançado com IA
 
 ---
 
