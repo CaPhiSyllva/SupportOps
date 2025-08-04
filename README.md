@@ -1,4 +1,4 @@
-# 💼 SupportOPS - AIO
+#  SupportOPS - AIO
 
 **Versão atual: v1.0**  
 **Autor:** Caua Philip Silva  
@@ -7,19 +7,19 @@
 
 ---
 
-## 🧰 Sobre o Projeto
+##  Sobre o Projeto
 
 O **SupportOPS - AIO** é um script `.bat` profissional e automatizado que centraliza ferramentas críticas de suporte técnico em um único painel interativo de linha de comando. Inspirado no conceito de um *canivete suíço para TI*, este projeto visa **otimizar tarefas rotineiras**, **padronizar ações de suporte** e **registrar logs de cada operação** para maior rastreabilidade.
 
 ---
 
-## 🎯 Objetivo
+##  Objetivo
 
 Automatizar e facilitar a vida do analista de suporte técnico — especialmente em ambientes de campo, help desk, service desk ou infraestrutura — com **comandos seguros, rápidos e eficazes**.
 
 ---
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 | Nº | Função                                         | Descrição |
 |----|------------------------------------------------|-----------|
@@ -48,7 +48,7 @@ Automatizar e facilitar a vida do analista de suporte técnico — especialmente
 
 ---
 
-## 📂 Estrutura de Pastas e Logs
+##  Estrutura de Pastas e Logs
 
 - Os logs de cada execução são salvos automaticamente em:  
   `C:\SwissKnifeLogs\log_DATA-HORA.log`  
@@ -58,7 +58,7 @@ Automatizar e facilitar a vida do analista de suporte técnico — especialmente
 
 ---
 
-## 🧠 Requisitos
+##  Requisitos
 
 - Sistema: **Windows 10/11 (com privilégios de administrador)**
 - Winget habilitado para funcionalidades de gerenciamento de aplicativos
@@ -66,7 +66,7 @@ Automatizar e facilitar a vida do analista de suporte técnico — especialmente
 
 ---
 
-## 📦 Como Usar
+##  Como Usar
 
 1. Clique com o botão direito no script `SupportOPS-AIO.bat` e selecione **Executar como Administrador**.
 2. Navegue pelo menu numérico conforme necessidade.
@@ -75,14 +75,14 @@ Automatizar e facilitar a vida do analista de suporte técnico — especialmente
 
 ---
 
-## 🛡️ Segurança
+##  Segurança
 
 - O script não realiza alterações destrutivas sem confirmação explícita.
 - Recomendado para ambientes corporativos, técnicos de suporte e profissionais autônomos de TI.
 
 ---
 
-## 📈 Roadmap (Futuras Implementações)
+##  Roadmap (Futuras Implementações)
 
 - [ ] Modo silencioso para execução via linha de comando (parâmetros CLI)
 - [ ] Validação de integridade de arquivos de log
@@ -92,29 +92,29 @@ Automatizar e facilitar a vida do analista de suporte técnico — especialmente
 
 ---
 
-## ✨ Diferenciais
+##  Diferenciais
 
-✅ Interface clara e objetiva  
-✅ Modular e fácil de manter  
-✅ Log automático de todas as execuções  
-✅ Otimizado para analistas de suporte e infraestrutura  
-✅ 100% offline — não depende de scripts externos
+ Interface clara e objetiva  
+ Modular e fácil de manter  
+ Log automático de todas as execuções  
+ Otimizado para analistas de suporte e infraestrutura  
+ 100% offline — não depende de scripts externos
 
 ---
 
-## 🤝 Contribuição
+##  Contribuição
 
 Se desejar contribuir com melhorias, novas funções ou internacionalização do script, sinta-se à vontade para abrir uma issue ou pull request.
 
 ---
 
-## 📜 Licença
+##  Licença
 
 Este projeto é de código aberto, licenciado sob os termos da **MIT License**.
 
 ---
 
-## 🙌 Agradecimentos
+##  Agradecimentos
 
 Este projeto foi idealizado para auxiliar profissionais de TI que, como eu, vivem na linha de frente resolvendo problemas antes mesmo que o usuário perceba.
 
