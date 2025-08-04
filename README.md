@@ -1,6 +1,6 @@
 # 💼 SupportOPS - AIO
 
-**Versão atual: v2.0**  
+**Versão atual: v1.0**  
 **Autor:** Caua Philip Silva  
 **Contato:** cphil.silva@outlook.com  
 **Data de criação:** Agosto de 2025  
