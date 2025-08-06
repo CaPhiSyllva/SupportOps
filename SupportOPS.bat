@@ -303,7 +303,7 @@ cls
 echo =======================================================
 echo        INSTALACAO DE IMPRESSORA REMOTA - LISTAGEM     
 echo =======================================================
-set /p server=Digite o nome ou IP do servidor de impressao (ex: PLATWPRINT01): 
+set /p server=Digite o nome ou IP do servidor de impressao (ex: PrinterServer): 
 
 if not defined server (
     echo Servidor invalido.
@@ -419,5 +419,6 @@ echo Obrigado por usar o SupportOPS!
 echo Suporte profissional com um toque de automacao.
 pause
 exit /b
+
 
 
