@@ -61,7 +61,8 @@ Ao executar o script, você verá um menu com 25 opções. Cada item ativa uma f
 | 22     | Instalar Impressora Remota         | Instala impressoras compartilhadas de um servidor de rede             |
 | 23     | Abrir Política de Segurança Local  | Abre `secpol.msc`                                                     |
 | 24     | Permitir ou Negar Logon Local      | Ativa ou desativa conta para logon local (`net user /active`)         |
-| 25     | Sair                               | Encerra o utilitário                                                  |
+| 25     | Reiniciar o Spooler de Impressão   | Ativa ou desativa o spooler de impressão                              |
+| 26     | Sair                               | Encerra o utilitário                                                  |
 
 ---
 
