@@ -46,7 +46,7 @@ echo [24] Permitir/Negar Logon Local
 echo [25] Reiniciar Spooler de Impressao
 echo [26] Sair
 echo ============================================================
-set /p opcao=Digite a opcao desejada (1-25): 
+set /p opcao=Digite a opcao desejada (1-26): 
 
 if not defined opcao goto menu
 
@@ -439,6 +439,7 @@ echo Obrigado por usar o SupportOPS!
 echo Suporte profissional com um toque de automacao.
 pause
 exit /b
+
 
 
 
