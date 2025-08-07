@@ -1,6 +1,6 @@
 @echo off
 title SupportOPS - Ferramenta de Suporte Profissional
-color 0B
+color 0E
 setlocal enabledelayedexpansion
 
 
@@ -43,7 +43,8 @@ echo [21] Gerenciar Aplicativos (Winget)
 echo [22] Instalar Impressora pela Rede
 echo [23] Abrir Politica de Seguranca Local
 echo [24] Permitir/Negar Logon Local
-echo [25] Sair
+echo [25] Reiniciar Spooler de Impressao
+echo [26] Sair
 echo ============================================================
 set /p opcao=Digite a opcao desejada (1-25): 
 
@@ -74,7 +75,8 @@ if %opcao%==21 goto winget
 if %opcao%==22 goto addprinter
 if %opcao%==23 goto secpol
 if %opcao%==24 goto netuserlogon
-if %opcao%==25 goto exit
+if %opcao%==25 goto restartspooler
+if %opcao%==26 goto exit
 
 echo.
 echo [ERRO] Opcao inválida. Tente novamente!
@@ -370,7 +372,7 @@ echo 2. Negar Logon Local
 echo 3. Listar Usuarios
 echo 4. Voltar ao Menu Principal
 echo ===========================
-set /p logonopcao= Escolha uma opcao (1-2):
+set /p logonopcao= Escolha uma opcao (1-4):
 if not defined logonopcao goto netuserlogon
 
 if %logonopcao%== 1 goto allowllogonlocal
@@ -413,6 +415,24 @@ net user
 pause
 goto netuserlogon
 
+:restartspooler
+cls
+echo =========================================================
+echo             Reiniciar Spooler de Impressao
+echo =========================================================
+echo [1] Parar Spooler
+echo [2] Iniciar Spooler
+echo [3] Voltar
+set /p spool=Opcao: 
+if "%spool%"=="1" (
+    net stop spooler
+    call :log "Spooler parado"
+) else if "%spool%"=="2" (
+    net start spooler
+    call :log "Spooler iniciado"
+)
+pause
+goto menu
 :exit
 cls
 echo Obrigado por usar o SupportOPS!
