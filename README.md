@@ -3,12 +3,16 @@
 **Autor:** Caua Philip Silva
 **Versão:** Agosto de 2025
 **Contato:** [cphil.silva@outlook.com](mailto:cphil.silva@outlook.com)
+<br>
+**Colaborador:** Vovolinux (Viniciusalopes) · https://gitlab.com/vovolinux · https://github.com/Viniciusalopes
 
 ---
 
 ##  Descrição
 
-O **SupportOPS** é um utilitário de linha de comando (.BAT) voltado para analistas de suporte técnico, infraestrutura, redes e cibersegurança. Ele oferece um **painel de automação profissional** com dezenas de funcionalidades de diagnóstico, manutenção, segurança e administração de sistemas Windows, centralizadas em um único script interativo e modular.
+O **SupportOPS** é um utilitário de linha de comando (.BAT) voltado para analistas de suporte técnico, infraestrutura, redes e cibersegurança.
+
+Ele oferece um **painel de automação profissional** com dezenas de funcionalidades de diagnóstico, manutenção, segurança e administração de sistemas Windows, centralizadas em um único script interativo e modular.
 
 ---
 
@@ -36,7 +40,7 @@ O **SupportOPS** é um utilitário de linha de comando (.BAT) voltado para anali
 Ao executar o script, você verá um menu com 25 opções. Cada item ativa uma função específica:
 
 | Código | Função                             | Descrição                                                             |
-| ------ | ---------------------------------- | --------------------------------------------------------------------- |
+|--------| ---------------------------------- | --------------------------------------------------------------------- |
 | 01     | Verificar e Reparar Disco (CHKDSK) | Executa `chkdsk C: /f /r`                                             |
 | 02     | Reparar Arquivos de Sistema (SFC)  | Executa `sfc /scannow`                                                |
 | 03     | Limpar Arquivos Temporários        | Remove arquivos em `%TEMP%`                                           |
@@ -62,7 +66,7 @@ Ao executar o script, você verá um menu com 25 opções. Cada item ativa uma f
 | 23     | Abrir Política de Segurança Local  | Abre `secpol.msc`                                                     |
 | 24     | Permitir ou Negar Logon Local      | Ativa ou desativa conta para logon local (`net user /active`)         |
 | 25     | Reiniciar o Spooler de Impressão   | Ativa ou desativa o spooler de impressão                              |
-| 26     | Sair                               | Encerra o utilitário                                                  |
+| S      | Sair                               | Encerra o utilitário                                                  |
 
 ---
 
