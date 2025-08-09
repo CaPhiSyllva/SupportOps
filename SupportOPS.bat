@@ -412,7 +412,14 @@ echo -------------------------------
 echo V para Voltar ao menu anterior
 echo ===============================
 set /p logonopcao="Escolha uma opcao (1-3): "
-if not defined logonopcao goto netuserlogon
+
+if not defined logonopcao (
+    echo.
+    echo [ERRO] Nenhuma opcao selecionada. Digite um numero entre 1 e 3 ou 'V' para Voltar ao menu anterior.
+    pause
+    set "opcao="
+    goto netuserlogon
+)
 
 if "%logonopcao%"== "1" goto allowllogonlocal
 if "%logonopcao%"== "01" goto allowllogonlocal
@@ -425,6 +432,7 @@ if "%logonopcao%"== "V" goto menu
 
 echo Opcao invalida! Tente novamente.
 pause
+set "logonopcao="
 goto netuserlogon
 
 :allowllogonlocal
