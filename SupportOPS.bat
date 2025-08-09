@@ -48,7 +48,13 @@ echo [S] Sair
 echo ============================================================
 set /p opcao=Digite a opcao desejada (1-25) ou 'S' para sair:
 
-if not defined opcao goto menu
+if not defined opcao (
+    echo.
+    echo [ERRO] Nenhuma opcao selecionada. Digite um numero entre 1 e 25 ou 'S' para sair.
+    pause
+    set "opcao="
+    goto menu
+)
 
 :: Chamar a função correspondente
 if %opcao%==1  goto chkdsk
@@ -82,6 +88,7 @@ if /i "%opcao%"=="S" goto exit
 echo.
 echo [ERRO] Opcao invalida! Digite um numero entre 1 e 25 ou 'S' para sair.
 pause
+set "opcao="
 goto menu
 
 :chkdsk
