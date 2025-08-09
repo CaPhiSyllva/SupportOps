@@ -20,6 +20,7 @@ setlocal enabledelayedexpansion
 set "driverBackupPath=C:\DriverBackup"
 
 :menu
+set "opcao="
 cls
 echo ============================================================
 echo          Suporte Profissional - by Caua Philip Silva
@@ -264,6 +265,7 @@ where winget >nul 2>&1 || (
     goto menu
 )
 cls
+set "wingetopcao="
 echo ======================================================
 echo       GERENCIADOR DE APLICATIVOS COM WINGET
 echo ======================================================
@@ -281,7 +283,7 @@ if not defined wingetopcao (
     echo.
     echo [ERRO] Nenhuma opcao selecionada. Digite um numero entre 1 e 5 ou 'V' para Voltar ao menu anterior.
     pause
-    set "opcao="
+    set "wingetopcao="
     goto winget
 )
 
@@ -402,6 +404,7 @@ goto menu
 
 :netuserlogon
 cls
+set "logonopcao="
 echo ===============================
 echo Permitir/Negar Logon Local
 echo ===============================
@@ -417,7 +420,7 @@ if not defined logonopcao (
     echo.
     echo [ERRO] Nenhuma opcao selecionada. Digite um numero entre 1 e 3 ou 'V' para Voltar ao menu anterior.
     pause
-    set "opcao="
+    set "logonopcao="
     goto netuserlogon
 )
 
@@ -476,6 +479,7 @@ goto netuserlogon
 
 :restartspooler
 cls
+set "spool="
 echo =========================================================
 echo             Reiniciar Spooler de Impressao
 echo =========================================================
