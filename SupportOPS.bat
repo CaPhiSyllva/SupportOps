@@ -10,6 +10,11 @@ setlocal enabledelayedexpansion
 :: Criado por:     Caua Philip Silva
 :: Contato:        cphil.silva@outlook.com
 :: Versão:         Agosto de 2025
+:: ----------------------------------------------------------
+:: Colaboradores:
+:: Vovolinux (Viniciusalopes)
+::   GitLab: https://gitlab.com/vovolinux
+::   GitHub: https://github.com/Viniciusalopes
 :: ==========================================================
 
 set "driverBackupPath=C:\DriverBackup"
@@ -44,7 +49,8 @@ echo [22] Instalar Impressora pela Rede
 echo [23] Abrir Politica de Seguranca Local
 echo [24] Permitir/Negar Logon Local
 echo [25] Reiniciar Spooler de Impressao
-echo [S] Sair
+echo ------------------------------------------------------------
+echo S para Sair
 echo ============================================================
 set /p opcao="Digite a opcao desejada (1-25): "
 
@@ -57,31 +63,40 @@ if not defined opcao (
 )
 
 :: Chamar a função correspondente
-if %opcao%==1  goto chkdsk
-if %opcao%==2  goto sfc
-if %opcao%==3  goto cleanup
-if %opcao%==4  goto memory
-if %opcao%==5  goto restore
-if %opcao%==6  goto network
-if %opcao%==7  goto taskmgr
-if %opcao%==8  goto driverbackup
-if %opcao%==9  goto updates
-if %opcao%==10 goto sysinfo
-if %opcao%==11 goto dnscache
-if %opcao%==12 goto netrestart
-if %opcao%==13 goto defrag
-if %opcao%==14 goto usermgmt
-if %opcao%==15 goto dism
-if %opcao%==16 goto firewall
-if %opcao%==17 goto eventlog
-if %opcao%==18 goto disktest
-if %opcao%==19 goto restorepoint
-if %opcao%==20 goto customcmd
-if %opcao%==21 goto winget
-if %opcao%==22 goto addprinter
-if %opcao%==23 goto secpol
-if %opcao%==24 goto netuserlogon
-if %opcao%==25 goto restartspooler
+if "%opcao%"=="1" goto chkdsk
+if "%opcao%"=="01" goto chkdsk
+if "%opcao%"=="2" goto sfc
+if "%opcao%"=="02" goto sfc
+if "%opcao%"=="3" goto cleanup
+if "%opcao%"=="03" goto cleanup
+if "%opcao%"=="4" goto memory
+if "%opcao%"=="04" goto memory
+if "%opcao%"=="5" goto restore
+if "%opcao%"=="05" goto restore
+if "%opcao%"=="6" goto network
+if "%opcao%"=="06" goto network
+if "%opcao%"=="7" goto taskmgr
+if "%opcao%"=="07" goto taskmgr
+if "%opcao%"=="8" goto driverbackup
+if "%opcao%"=="08" goto driverbackup
+if "%opcao%"=="9" goto updates
+if "%opcao%"=="09" goto updates
+if "%opcao%"=="10" goto sysinfo
+if "%opcao%"=="11" goto dnscache
+if "%opcao%"=="12" goto netrestart
+if "%opcao%"=="13" goto defrag
+if "%opcao%"=="14" goto usermgmt
+if "%opcao%"=="15" goto dism
+if "%opcao%"=="16" goto firewall
+if "%opcao%"=="17" goto eventlog
+if "%opcao%"=="18" goto disktest
+if "%opcao%"=="19" goto restorepoint
+if "%opcao%"=="20" goto customcmd
+if "%opcao%"=="21" goto winget
+if "%opcao%"=="22" goto addprinter
+if "%opcao%"=="23" goto secpol
+if "%opcao%"=="24" goto netuserlogon
+if "%opcao%"=="25" goto restartspooler
 if /i "%opcao%"=="s" goto exit
 if /i "%opcao%"=="S" goto exit
 
@@ -252,22 +267,29 @@ cls
 echo ======================================================
 echo       GERENCIADOR DE APLICATIVOS COM WINGET
 echo ======================================================
-echo 1. Listar aplicativos instalados
-echo 2. Procurar por um aplicativo
-echo 3. Instalar um aplicativo
-echo 4. Atualizar todos os aplicativos
-echo 5. Desinstalar um aplicativo
-echo 6. Voltar ao Menu Principal
+echo [01] Listar aplicativos instalados
+echo [02] Procurar por um aplicativo
+echo [03] Instalar um aplicativo
+echo [04] Atualizar todos os aplicativos
+echo [05] Desinstalar um aplicativo
+echo ------------------------------------------------------
+echo V para Voltar ao menu anterior
 echo ======================================================
 set /p wingetopcao="Escolha uma opcao (1-5): "
 if not defined wingetopcao goto winget
 
-if %wingetopcao%==1 goto wingetlist
-if %wingetopcao%==2 goto wingetsearch
-if %wingetopcao%==3 goto wingetinstall
-if %wingetopcao%==4 goto wingetupgrade
-if %wingetopcao%==5 goto wingetuninstall
-if %wingetopcao%==6 goto menu
+if "%wingetopcao%"=="1" goto wingetlist
+if "%wingetopcao%"=="01" goto wingetlist
+if "%wingetopcao%"=="2" goto wingetsearch
+if "%wingetopcao%"=="02" goto wingetsearch
+if "%wingetopcao%"=="3" goto wingetinstall
+if "%wingetopcao%"=="03" goto wingetinstall
+if "%wingetopcao%"=="4" goto wingetupgrade
+if "%wingetopcao%"=="04" goto wingetupgrade
+if "%wingetopcao%"=="5" goto wingetuninstall
+if "%wingetopcao%"=="05" goto wingetuninstall
+if "%wingetopcao%"=="v" goto menu
+if "%wingetopcao%"=="V" goto menu
 
 echo Opcao invalida! Tente novamente.
 pause
@@ -372,21 +394,26 @@ goto menu
 
 :netuserlogon
 cls
-echo ===========================
+echo ===============================
 echo Permitir/Negar Logon Local
-echo ===========================
-echo 1. Permitir Logon Local
-echo 2. Negar Logon Local
-echo 3. Listar Usuarios
-echo 4. Voltar ao Menu Principal
-echo ===========================
+echo ===============================
+echo [1] Permitir Logon Local
+echo [2] Negar Logon Local
+echo [3] Listar Usuarios
+echo -------------------------------
+echo V para Voltar ao menu anterior
+echo ===============================
 set /p logonopcao="Escolha uma opcao (1-3): "
 if not defined logonopcao goto netuserlogon
 
-if %logonopcao%== 1 goto allowllogonlocal
-if %logonopcao%== 2 goto denylogonlocal
-if %logonopcao%== 3 goto listusers
-if %logonopcao%== 4 goto menu
+if "%logonopcao%"== "1" goto allowllogonlocal
+if "%logonopcao%"== "01" goto allowllogonlocal
+if "%logonopcao%"== "2" goto denylogonlocal
+if "%logonopcao%"== "02" goto denylogonlocal
+if "%logonopcao%"== "3" goto listusers
+if "%logonopcao%"== "03" goto listusers
+if "%logonopcao%"== "v" goto menu
+if "%logonopcao%"== "V" goto menu
 
 echo Opcao invalida! Tente novamente.
 pause
@@ -430,7 +457,9 @@ echo             Reiniciar Spooler de Impressao
 echo =========================================================
 echo [1] Parar Spooler
 echo [2] Iniciar Spooler
-echo [3] Voltar
+echo ---------------------------------------------------------
+echo V para Voltar ao menu
+echo =========================================================
 set /p spool="Opcao: "
 if "%spool%"=="1" (
     net stop spooler
@@ -439,15 +468,13 @@ if "%spool%"=="1" (
     net start spooler
     call :log "Spooler iniciado"
 )
-pause
 goto menu
+
 :exit
 cls
+echo =========================================================
 echo Obrigado por usar o SupportOPS!
 echo Suporte profissional com um toque de automacao.
+echo =========================================================
 pause
 exit /b
-
-
-
-
