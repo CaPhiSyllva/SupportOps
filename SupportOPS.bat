@@ -46,7 +46,7 @@ echo [24] Permitir/Negar Logon Local
 echo [25] Reiniciar Spooler de Impressao
 echo [S] Sair
 echo ============================================================
-set /p opcao=Digite a opcao desejada (1-25) ou 'S' para sair:
+set /p opcao="Digite a opcao desejada (1-25): "
 
 if not defined opcao (
     echo.
@@ -259,7 +259,7 @@ echo 4. Atualizar todos os aplicativos
 echo 5. Desinstalar um aplicativo
 echo 6. Voltar ao Menu Principal
 echo ======================================================
-set /p wingetopcao=Escolha uma opcao (1-6): 
+set /p wingetopcao="Escolha uma opcao (1-5): "
 if not defined wingetopcao goto winget
 
 if %wingetopcao%==1 goto wingetlist
@@ -281,14 +281,14 @@ pause
 goto winget
 
 :wingetsearch
-set /p appsearch=Digite o nome do aplicativo para procurar: 
+set /p appsearch="Digite o nome do aplicativo para procurar: "
 if not defined appsearch goto winget
 winget search "%appsearch%"
 pause
 goto winget
 
 :wingetinstall
-set /p appinstall=Digite o ID ou nome do aplicativo para instalar: 
+set /p appinstall="Digite o ID ou nome do aplicativo para instalar: "
 if not defined appinstall goto winget
 winget install "%appinstall%"
 pause
@@ -302,7 +302,7 @@ pause
 goto winget
 
 :wingetuninstall
-set /p appuninstall=Digite o ID ou nome do aplicativo para desinstalar: 
+set /p appuninstall="Digite o ID ou nome do aplicativo para desinstalar: "
 if not defined appuninstall goto winget
 winget uninstall "%appuninstall%"
 pause
@@ -313,7 +313,7 @@ cls
 echo =======================================================
 echo        INSTALACAO DE IMPRESSORA REMOTA - LISTAGEM     
 echo =======================================================
-set /p server=Digite o nome ou IP do servidor de impressao (ex: PrinterServer): 
+set /p server="Digite o nome ou IP do servidor de impressao (ex: PrinterServer): "
 
 if not defined server (
     echo Servidor invalido.
@@ -339,7 +339,7 @@ echo Compartilhamentos disponíveis em \\%server%:
 net view \\%server% | findstr /R /C:"^[A-Za-z]"
 
 echo.
-set /p printername=Digite o nome da impressora compartilhada para instalar (ex: HP-Laser): 
+set /p printername="Digite o nome da impressora compartilhada para instalar (ex: HP-Laser): "
 if not defined printername (
     echo Nome de impressora invalido.
     call :log "Tentativa de instalação com nome de impressora vazio"
@@ -380,7 +380,7 @@ echo 2. Negar Logon Local
 echo 3. Listar Usuarios
 echo 4. Voltar ao Menu Principal
 echo ===========================
-set /p logonopcao= Escolha uma opcao (1-4):
+set /p logonopcao="Escolha uma opcao (1-3): "
 if not defined logonopcao goto netuserlogon
 
 if %logonopcao%== 1 goto allowllogonlocal
@@ -395,7 +395,7 @@ goto netuserlogon
 :allowllogonlocal
 cls
 echo ========================================================================
-set /p user= Digite o usuario que deseja permitir o logon local (ex: user1):
+set /p user="Digite o usuario que deseja permitir o logon local (ex: user1): "
 echo ========================================================================
 if not defined user goto netuserlogon
 net user %user% /active:yes
@@ -406,7 +406,7 @@ goto netuserlogon
 :denylogonlocal
 cls
 echo ===========================================================================
-set /p user= Digite o usuario que deseja negar o logon local (ex: user1):
+set /p user="Digite o usuario que deseja negar o logon local (ex: user1): "
 echo ===========================================================================
 if not defined user goto netuserlogon
 net user %user% /active:no
@@ -431,7 +431,7 @@ echo =========================================================
 echo [1] Parar Spooler
 echo [2] Iniciar Spooler
 echo [3] Voltar
-set /p spool=Opcao: 
+set /p spool="Opcao: "
 if "%spool%"=="1" (
     net stop spooler
     call :log "Spooler parado"
