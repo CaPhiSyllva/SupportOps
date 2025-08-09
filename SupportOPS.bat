@@ -466,6 +466,14 @@ net user
 pause
 goto netuserlogon
 
+:stopspooler
+    net stop spooler
+    call :log "Spooler parado"
+
+:startspooler
+    net start spooler
+    call :log "Spooler iniciado"
+
 :restartspooler
 cls
 echo =========================================================
@@ -477,14 +485,24 @@ echo ---------------------------------------------------------
 echo V para Voltar ao menu
 echo =========================================================
 set /p spool="Opcao: "
-if "%spool%"=="1" (
-    net stop spooler
-    call :log "Spooler parado"
-) else if "%spool%"=="2" (
-    net start spooler
-    call :log "Spooler iniciado"
+
+if not defined spool (
+    echo.
+    echo [ERRO] Nenhuma opcao selecionada. Digite um numero entre 1 e 2 ou 'V' para Voltar ao menu anterior.
+    pause
+    set "spool="
+    goto restartspooler
 )
-goto menu
+
+if "%wingetopcao%"=="1" goto stopspooler
+if "%wingetopcao%"=="01" goto stopspooler
+if "%wingetopcao%"=="2" goto startspooler
+if "%wingetopcao%"=="02" goto startspooler
+if "%wingetopcao%"=="v" goto menu
+if "%wingetopcao%"=="V" goto menu
+
+set "spool="
+goto restartspooler
 
 :exit
 cls
