@@ -276,7 +276,14 @@ echo ------------------------------------------------------
 echo V para Voltar ao menu anterior
 echo ======================================================
 set /p wingetopcao="Escolha uma opcao (1-5): "
-if not defined wingetopcao goto winget
+
+if not defined wingetopcao (
+    echo.
+    echo [ERRO] Nenhuma opcao selecionada. Digite um numero entre 1 e 5 ou 'V' para Voltar ao menu anterior.
+    pause
+    set "opcao="
+    goto winget
+)
 
 if "%wingetopcao%"=="1" goto wingetlist
 if "%wingetopcao%"=="01" goto wingetlist
@@ -293,6 +300,7 @@ if "%wingetopcao%"=="V" goto menu
 
 echo Opcao invalida! Tente novamente.
 pause
+set "wingetopcao="
 goto winget
 
 :wingetlist
