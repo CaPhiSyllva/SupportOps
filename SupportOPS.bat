@@ -44,9 +44,9 @@ echo [22] Instalar Impressora pela Rede
 echo [23] Abrir Politica de Seguranca Local
 echo [24] Permitir/Negar Logon Local
 echo [25] Reiniciar Spooler de Impressao
-echo [26] Sair
+echo [S] Sair
 echo ============================================================
-set /p opcao=Digite a opcao desejada (1-26): 
+set /p opcao=Digite a opcao desejada (1-25) ou 'S' para sair:
 
 if not defined opcao goto menu
 
@@ -76,10 +76,11 @@ if %opcao%==22 goto addprinter
 if %opcao%==23 goto secpol
 if %opcao%==24 goto netuserlogon
 if %opcao%==25 goto restartspooler
-if %opcao%==26 goto exit
+if /i "%opcao%"=="s" goto exit
+if /i "%opcao%"=="S" goto exit
 
 echo.
-echo [ERRO] Opcao inválida. Tente novamente!
+echo [ERRO] Opcao invalida! Digite um numero entre 1 e 25 ou 'S' para sair.
 pause
 goto menu
 
